@@ -106,9 +106,9 @@ const SkipNavigationButton = styled.a`
    padding: 0.5rem 1.5rem;
    border-radius: 0 0 0.25rem 0.25rem;
    transform: translateY(-120%);
-   background-color: ${({ theme }) => theme.colors.formBackground};
    color: ${({ theme }) => theme.colors.primary};
    border: ${({ theme }) => `2px solid ${theme.colors.primary}`};
+   background-color: ${({ theme }) => theme.colors.formBackground};
    text-decoration: none;
    outline: none;
    transition: transform 325ms ease-in;
