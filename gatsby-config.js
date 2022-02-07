@@ -1,14 +1,9 @@
 module.exports = {
   siteMetadata: {
       title: `facundoalexandre`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.facundoalexandre.com`
   },
-  plugins: ["gatsby-plugin-styled-components", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": ""
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"
@@ -20,5 +15,15 @@ module.exports = {
       "path": "./src/images/"
     },
     __key: "images"
-  }]
+  },
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Roboto\:300,400,700`,
+      ],
+      display: 'swap'
+    }
+  }
+]
 };
