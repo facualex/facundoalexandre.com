@@ -6,28 +6,26 @@ import breakpoint from '../config/breakpoints'
 const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: auto;
+    height: auto;
     background-color: ${({ theme }) => theme.colors.formBackground};
     border-radius: 10px;
     margin-top: 2rem;
     padding: 2rem 3rem;
 
     @media only screen and ${breakpoint.device.xs} {
-        width: 65%;
-        height: auto;
         padding: 1.5rem 2.5rem;
+        min-width: 60vw;
     }
 
     @media only screen and ${breakpoint.device.sm} {
-        width: 40%;
-        height: auto;
         padding: 2rem 3rem;
+        min-width: auto;
     }
 
     @media only screen and ${breakpoint.device.lg} {
         padding: 2rem 3rem;
-        height: auto;
-        width: 35%;
+        min-width: 35vw;
     }
 `
 

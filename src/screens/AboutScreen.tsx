@@ -55,6 +55,19 @@ const InterestsTitle = styled.h2`
     font-size: 15px; 
     font-weight: bold;
     color: ${({ theme, color }) => color ? color : hexToRGB(theme.colors.white, { format: 'css', alpha: 0.65 })};
+
+    @media only screen and ${breakpoint.device.xs} {
+        font-size: 13px; 
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        font-size: 13px; 
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        font-size: 15px; 
+    }
+
 `
 
 const TextContainer = styled.div`
