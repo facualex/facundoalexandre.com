@@ -7,7 +7,6 @@ const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 35%;
-    height: 65vh;
     background-color: ${({ theme }) => theme.colors.formBackground};
     border-radius: 10px;
     margin-top: 2rem;
@@ -15,19 +14,19 @@ const FormContainer = styled.div`
 
     @media only screen and ${breakpoint.device.xs} {
         width: 65%;
-        height: 70vh;
+        height: auto;
         padding: 1.5rem 2.5rem;
     }
 
     @media only screen and ${breakpoint.device.sm} {
         width: 40%;
-        height: 65vh;
+        height: auto;
         padding: 2rem 3rem;
     }
 
     @media only screen and ${breakpoint.device.lg} {
         padding: 2rem 3rem;
-        height: 65vh;
+        height: auto;
         width: 35%;
     }
 `
@@ -176,8 +175,23 @@ const ButtonGroupContainer = styled.div`
 
 const ButtonGroup = styled.div`
     display: flex;
-    width: 100%;
     margin-top: 1rem;
+
+    @media only screen and ${breakpoint.device.xs} {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
 `
 
 const Button = styled.button<{ selected?: boolean }>`
@@ -193,6 +207,8 @@ const Button = styled.button<{ selected?: boolean }>`
     border-radius: 3px;
     cursor: pointer;
     outline: none;
+    width: 100%;
+    
 
     &:hover {
         color: ${({ theme, selected }) => hexToRGB(theme.colors.primary, { format: 'css', alpha: selected ? 1 : 0.35 })};
@@ -210,14 +226,29 @@ const Button = styled.button<{ selected?: boolean }>`
 
     @media only screen and ${breakpoint.device.xs} {
         font-size: 10px;
+
+        &:not(:last-child) {
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
     }
 
     @media only screen and ${breakpoint.device.sm} {
         font-size: 13px;
+        &:not(:last-child) {
+            margin-right: 1rem;
+            margin-bottom: 0;
+        }
+
+
     }
 
     @media only screen and ${breakpoint.device.lg} {
         font-size: 13px;
+        &:not(:last-child) {
+            margin-right: 1rem;
+            margin-bottom: 0;
+        }
     }
 `
 
