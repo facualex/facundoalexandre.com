@@ -1,23 +1,76 @@
 import React, { InputHTMLAttributes, useState } from 'react'
 import hexToRGB from 'hex-rgb'
 import styled from 'styled-components'
+import breakpoint from '../config/breakpoints'
 
 const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 35%;
-    height: 60vh;
+    height: 65vh;
     background-color: ${({ theme }) => theme.colors.formBackground};
     border-radius: 10px;
     margin-top: 2rem;
     padding: 2rem 3rem;
+
+    @media only screen and ${breakpoint.device.xs} {
+        width: 65%;
+        height: 70vh;
+        padding: 1.5rem 2.5rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        width: 40%;
+        height: 65vh;
+        padding: 2rem 3rem;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        padding: 2rem 3rem;
+        height: 65vh;
+        width: 35%;
+    }
 `
+
 
 const FormTitle = styled.span`
     color: ${({ theme }) => hexToRGB(theme.colors.white, { format: 'css', alpha: 0.8 })};
     font-size: 15px;
     font-weight: bold;
     margin-top: 10px;
+
+    @media only screen and ${breakpoint.device.xs} {
+        font-size: 13px;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        font-size: 15px;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        font-size: 15px;
+    }
+`
+
+const InputGroup = styled.div`
+    display: flex;
+    margin-top: 1.5rem;
+
+    @media only screen and ${breakpoint.device.xs} {
+        flex-direction: column;
+        margin-top: 0.8rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        margin-top: 1.5rem;
+       flex-direction: row;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+      margin-top: 1.5rem;
+      flex-direction: row;
+    }
+
 `
 
 const InputWrapper = styled.div<{ marginTop?: string, marginBottom?: string, marginLeft?: string, marginRight?: string}>`
@@ -27,6 +80,21 @@ const InputWrapper = styled.div<{ marginTop?: string, marginBottom?: string, mar
     margin-bottom: ${({ marginBottom }) => marginBottom ? marginBottom : undefined};
     margin-right: ${({ marginRight }) => marginRight ? marginRight : undefined};
     margin-left: ${({ marginLeft }) => marginLeft ? marginLeft : undefined};
+
+    @media only screen and ${breakpoint.device.xs} {
+        margin-top: 1.2rem;
+        margin-bottom: 0rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        margin-top: ${({ marginTop }) => marginTop ? marginTop : undefined};
+        margin-bottom: ${({ marginBottom }) => marginBottom ? marginBottom : undefined};
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        margin-top: ${({ marginTop }) => marginTop ? marginTop : undefined};
+        margin-bottom: ${({ marginBottom }) => marginBottom ? marginBottom : undefined};
+    }
 `
 
 
@@ -37,6 +105,18 @@ const InputElement = styled.input<{ backgroundColor?: string }>`
     color: white;
     outline: none;
     padding: 1rem 1rem;
+
+    @media only screen and ${breakpoint.device.xs} {
+        border-radius: 5px;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        border-radius: 10px;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        border-radius: 10px;
+    }
 
     &:focus {
         border: ${({ theme }) => `2px solid ${theme.colors.primary}`};
@@ -61,6 +141,37 @@ const Label = styled.label<{ fontSize?: string }>`
     font-size: ${({ fontSize}) => fontSize ? fontSize : "13px"};
     color: ${({ theme }) => hexToRGB(theme.colors.white, { format: 'css', alpha: 0.7 })};
     margin-bottom: 5px;
+
+    @media only screen and ${breakpoint.device.xs} {
+        font-size: 10px;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        font-size: 13px;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        font-size: 13px;
+    }
+
+`
+
+const ButtonGroupContainer = styled.div`
+    width: 100%;
+    margin-top: 4rem;
+
+    @media only screen and ${breakpoint.device.xs} {
+        margin-top: 1rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        margin-top: 4rem;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        margin-top: 4rem;
+    }
+
 `
 
 const ButtonGroup = styled.div`
@@ -95,6 +206,18 @@ const Button = styled.button<{ selected?: boolean }>`
     &:focus {
         color: ${({ theme, selected }) => selected ? undefined : hexToRGB(theme.colors.primary, { format: 'css', alpha: 0.75 })};
         border: ${({ theme, selected }) => selected ? undefined : `2px solid ${hexToRGB(theme.colors.primary, { format: 'css', alpha: 0.35})}`};
+    }
+
+    @media only screen and ${breakpoint.device.xs} {
+        font-size: 10px;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        font-size: 13px;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        font-size: 13px;
     }
 `
 
@@ -150,7 +273,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 function Input({ name, label, onChange, placeholder = "Start writing here...", marginTop, marginBottom, marginLeft, marginRight, textarea = false }: InputProps) {
-
     return (
         <InputWrapper marginTop={marginTop} marginBottom={marginBottom} marginRight={marginRight} marginLeft={marginLeft}>
             {label ? (
@@ -188,7 +310,7 @@ function Form() {
     return (
         <FormContainer>
             <FormTitle>Contact form</FormTitle>
-            <div style={{ display: "flex", marginTop: "1.5rem" }}>
+            <InputGroup>
                 <div style={{ display: 'flex', flex: 1, flexDirection: 'column', marginRight: '1rem' }}>
                     <Input name="name" label="Your name" onChange={setInput} placeholder="Example: John Doe" marginTop="1rem" marginBottom="2rem" />
                     <Input name="email" label="Your email" onChange={setInput} placeholder="Example: johndoe@email.com" marginTop="1rem" />
@@ -196,8 +318,8 @@ function Form() {
                 <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
                     <Input textarea name="message" label="Your message" onChange={setInput} placeholder="Write your message here..." marginTop="1rem" />
                 </div>
-            </div>
-            <div style={{ width: "100%", marginTop: "4rem" }}>
+            </InputGroup>
+            <ButtonGroupContainer>
                 <Label><b>Subject</b></Label>
                 <ButtonGroup>
                     <Button id="freelance" selected={subject === "freelance"} onClick={selectOption}>Freelance offer</Button>
@@ -208,7 +330,7 @@ function Form() {
                 <SendButton canSubmit={canSubmit} disabled={!canSubmit}>
                     Send
                 </SendButton>
-            </div>
+            </ButtonGroupContainer>
         </FormContainer>
     )
 }

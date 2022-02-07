@@ -21,6 +21,23 @@ const GoUpButtonWrapper = styled.div`
     bottom: 3rem;
     right: 4rem;
     z-index: 999;
+    color: white;
+
+    @media only screen and ${breakpoint.device.xs} {
+        bottom: 2rem;
+        right: 2rem;
+     }
+
+    @media only screen and ${breakpoint.device.sm} {
+        bottom: 3rem;
+        right: 4rem;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        bottom: 3rem;
+        right: 4rem;
+    }
+
 `
 
 const BackgroundFirstName = styled.span`

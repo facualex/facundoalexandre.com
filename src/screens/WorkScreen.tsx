@@ -4,6 +4,7 @@ import hexToRGB from 'hex-rgb'
 import Section from '../layout/Section';
 import Anima from '../components/Anima';
 import { useInView } from 'react-intersection-observer';
+import breakpoint from '../config/breakpoints'
 
 const AnimatedContent = styled(Anima)<{ marginTop?: string }>`
     display: flex;
@@ -17,12 +18,24 @@ const SectionTitle = styled.h1`
     font-size: 25px; 
     font-weight: bold;
     color: ${({ theme, color }) => color ? color : hexToRGB(theme.colors.white, { format: 'css', alpha: 0.8 })};
+    margin-bottom: 1.5rem;
+
+    @media only screen and ${breakpoint.device.xs} {
+        font-size: 20px; 
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        font-size: 20px; 
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        font-size: 25px; 
+    }
 `
 
 const WorkDisplayContainer = styled.div`
     display: flex;
     width: 100%:
-    background-color: blue;
     margin-top: 2rem;
     position: relative;
 `
@@ -35,6 +48,18 @@ const WorkItem = styled.div`
 
     &:not(:last-child) {
         margin-right: 1rem;
+    }
+
+    @media only screen and ${breakpoint.device.xs} {
+        height: 150px;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        height: 250px;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        height: 250px;
     }
 `
 
@@ -88,6 +113,20 @@ const ButtonBackground = styled.div`
         margin-right: 1rem;
     }
 
+    @media only screen and ${breakpoint.device.xs} {
+        width: 8.3rem;
+        height: 2.7rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        width: 10.6rem;
+        height: 2.8rem;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        width: 10.6rem;
+        height: 2.8rem;
+    }
 `
 
 const Button = styled.a`
@@ -97,9 +136,26 @@ const Button = styled.a`
     cursor: pointer;
     color: ${({ theme }) => theme.colors.primary};    
     background-color: ${({ theme }) => theme.colors.background};    
-    width: 10rem;
-    height: 2.3rem;
     text-decoration: none;
+
+    @media only screen and ${breakpoint.device.xs} {
+        width: 7.2rem;
+        height: 2.5rem;
+        font-size: 0.8rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        width: 10.3rem;
+        height: 2.6rem;
+        font-size: 1rem;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        width: 10.3rem;
+        height: 2.6rem;
+        font-size: 1rem;
+    }
+
 `
 
 function Work() {

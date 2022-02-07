@@ -138,7 +138,22 @@ const Column = styled.div`
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
-    flex: 1;
+
+    @media only screen and ${breakpoint.device.xs} {
+        flex: undefined;
+        margin-bottom: 1.5rem;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
 `
 
 const ColumnContent = styled.div`
@@ -146,6 +161,19 @@ const ColumnContent = styled.div`
     flex-direction: column;
     justify-content: center;
     padding: 5px 0;
+
+    @media only screen and ${breakpoint.device.xs} {
+        align-items: center;
+    }
+
+    @media only screen and ${breakpoint.device.sm} {
+        align-items: flex-start;
+    }
+
+    @media only screen and ${breakpoint.device.lg} {
+        align-items: flex-start;
+    }
+
 `
 
 function TechList() {
