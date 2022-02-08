@@ -329,7 +329,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Barbecue
+                            Barbeque
                         </Text>
                         <Text>
                             <HighlightText
@@ -341,7 +341,16 @@ function MyInterests() {
                             </HighlightText>
                             Math & Statistics
                         </Text>
-
+                        <Text>
+                            <HighlightText
+                                color={hexToRGB(colors.primary, { format: 'css', alpha: 0.7 })}
+                                fontSize="22px"
+                                marginRight='5px'
+                            >
+                                &gt;
+                            </HighlightText>
+                            Hiking
+                        </Text>
                     </ColumnContent>
                 </Column>
                 <Column>
@@ -355,7 +364,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Travelling
+                            Remix
                         </Text>
                         <Text>
                             <HighlightText
@@ -365,7 +374,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Barbecue
+                            Kubernetes/Terraform
                         </Text>
                         <Text>
                             <HighlightText
@@ -375,7 +384,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Math & Statistics
+                            Flutter
                         </Text>
                     </ColumnContent>
                 </Column>
@@ -390,7 +399,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Travelling
+                            Software Architecture
                         </Text>
                         <Text>
                             <HighlightText
@@ -400,7 +409,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Barbecue
+                            Data Science
                         </Text>
                         <Text>
                             <HighlightText
@@ -410,7 +419,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Math & Statistics
+                            UX/UI focused development
                         </Text>
                     </ColumnContent>
                 </Column>
