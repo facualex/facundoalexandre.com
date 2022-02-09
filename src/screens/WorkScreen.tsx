@@ -188,7 +188,7 @@ function Work() {
                                 </Button>
                             </ButtonBackground>
                             <ButtonBackground>
-                                <Button>
+                                <Button href="./spa_cv.pdf" rel="noopener noreferrer" target="_blank">
                                     Resume
                                 </Button>
                             </ButtonBackground>

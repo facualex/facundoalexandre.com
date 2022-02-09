@@ -1,16 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { faGithub as github, faLinkedin as linkedin } from "@fortawesome/free-brands-svg-icons"
-import { faFileInvoice as resume, faChevronUp as chevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faFileInvoice as resume, faChevronUp as chevronUp, faChevronDown as chevronDown } from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-type AvailableIcons = "github" | "resume" | "linkedin" | "chevronUp";
+type AvailableIcons = "github" | "resume" | "linkedin" | "chevronUp" | "chevronDown";
 
 const icons: Record<AvailableIcons, IconDefinition> = {
     github,
     linkedin,
     resume, 
     chevronUp,
+    chevronDown,
 }
 
 interface IconProps {

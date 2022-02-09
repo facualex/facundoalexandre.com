@@ -59,10 +59,10 @@ function IconsBar() {
             </a>
             <Separator />
 
-            <div style={{ display: "flex", alignItems: "center" }}>
+            <a href="./spa_cv.pdf" style={{ display: "flex", alignItems: "center", textDecoration: "none" }} rel="noopener noreferrer" target="_blank">
                 <StyledIcon icon="resume" color={colors.icon} size="lg" marginRight="5px" marginLeft="17px" />
                 <span style={{ fontSize: "10px", color: colors.icon }}>CV</span>
-            </div>
+            </a>
         </IconsContainer>
     )
 }

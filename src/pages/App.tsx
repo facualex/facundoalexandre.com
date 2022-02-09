@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import Icon from '../components/Icon';
 import hexToRGB from 'hex-rgb';
 import breakpoint from '../config/breakpoints'
+import ChangeLanguage from '../components/ChangeLanguage';
 
 const GoUpButtonWrapper = styled.div`
     display: flex;
@@ -119,6 +120,7 @@ const SkipNavigationButton = styled.a`
    }
 `
 
+
 function GoUpButton() {
     return (
         <a href="#home" style={{ cursor: "pointer" }}>
@@ -134,6 +136,9 @@ function App() {
         <>
             <SkipNavigationButton href="#about">Skip navigation</SkipNavigationButton>
             <IconsBar />
+            {
+                // <ChangeLanguage onSelect={() => console.log("selected")} />
+            }
             <NameContainer>
                 <BackgroundFirstName>
                     FACUNDO
