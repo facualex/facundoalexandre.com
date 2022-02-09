@@ -136,9 +136,7 @@ function App() {
         <>
             <SkipNavigationButton href="#about">Skip navigation</SkipNavigationButton>
             <IconsBar />
-            {
-                // <ChangeLanguage onSelect={() => console.log("selected")} />
-            }
+            <ChangeLanguage onSelect={() => console.log("selected")} />
             <NameContainer>
                 <BackgroundFirstName>
                     FACUNDO
