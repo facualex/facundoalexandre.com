@@ -1,11 +1,12 @@
 import React from 'react';
 import Anima from '../components/Anima';
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import Section from '../layout/Section';
 import breakpoint from '../config/breakpoints';
 import Header from '../layout/Header';
 import hexToRGBA from 'hex-rgb'
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 
 const HomeScreenWrapper = styled.div`
     display: inline-block;
@@ -162,6 +163,8 @@ const PatternImage = styled.img`
 `
 
 function Home() {
+    const { t: translate } = useTranslation();
+
     const { ref, inView } = useInView({
         /* Optional options */
         threshold: 0.7,
@@ -173,20 +176,26 @@ function Home() {
             <Header />
             <HomeScreenWrapper>
                 <Anima animate={inView} animationName="FadeInLeft">
-                    <PreTitle>Hello, my name is</PreTitle>
+                    <PreTitle>{translate('home.hello')}</PreTitle>
                     <Title>Facundo.</Title>
                 </Anima>
                 <Anima animate={inView} animationName="FadeIn" animationDelay={1000}>
-                    <Subtitle>I build experiences for the web.</Subtitle>
+                    <Subtitle>{translate('home.subtitle')}</Subtitle>
                 </Anima>
                 <Anima animate={inView} animationName="FadeIn" animationDelay={1500} animationDuration={2000}>
                     <Text>
-                        I’m a software engineer specialized in developing web experiences and building high quality reliable systems.
-                        I’m currently working on a <HighlightText>personal project</HighlightText> but also <HighlightText>available for work.</HighlightText>
+                        {translate('home.text.1')}
+                        <HighlightText>
+                            {translate("home.text.highlight1")}
+                        </HighlightText>
+                        {translate("home.text.2")}
+                        <HighlightText>
+                            {translate("home.text.highlight2")}
+                        </HighlightText>
                     </Text>
                     <ButtonBackground>
                         <Button href="#contact">
-                            Let's talk
+                            {translate("home.cta")}
                         </Button>
                     </ButtonBackground>
                 </Anima>

@@ -4,8 +4,12 @@ import spanish from './locales/spa/translation.json';
 import { initReactI18next } from 'react-i18next';
 
 export const resources = {
-  en: english,
-  spa: spanish,
+  en: {
+    translation: english,
+  },
+  spa: {
+    translation: spanish,
+  },
 } as const;
 
 i18n.use(initReactI18next).init({

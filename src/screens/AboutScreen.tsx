@@ -5,6 +5,7 @@ import Anima from '../components/Anima';
 import Section from '../layout/Section';
 import { useInView } from 'react-intersection-observer';
 import breakpoint from "../config/breakpoints"
+import { useTranslation } from 'react-i18next';
 
 const AnimatedContent = styled(Anima)<{ marginTop?: string }>`
     display: flex;
@@ -304,6 +305,7 @@ function TechList() {
 
 function MyInterests() {
     const { colors } = useTheme()
+    const { t: translate  } = useTranslation();
 
     return (
         <div style={{ width: "100%", marginTop: '2.5rem'}}>
@@ -434,6 +436,7 @@ function About() {
         threshold: 0.3,
         triggerOnce: true,
     });
+    const { t: translate  } = useTranslation();
 
     return (
         <Section ref={ref} id="about" visibility={inView ? 'visible' : "hidden"} withSeparator height='auto'>
