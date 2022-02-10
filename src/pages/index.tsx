@@ -5,6 +5,9 @@ import { ThemeProvider } from "styled-components"
 import { theme } from '../config/theme'
 import App from "./App"
 
+// import i18n (needs to be bundled ;)) 
+import '../config/i18n';
+
 const IndexPage = () => {
   return (
     <ThemeProvider theme={theme}>
