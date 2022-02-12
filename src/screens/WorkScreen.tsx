@@ -5,6 +5,7 @@ import Section from '../layout/Section';
 import Anima from '../components/Anima';
 import { useInView } from 'react-intersection-observer';
 import breakpoint from '../config/breakpoints'
+import { useTranslation } from 'react-i18next';
 
 const AnimatedContent = styled(Anima)<{ marginTop?: string }>`
     display: flex;
@@ -165,21 +166,23 @@ function Work() {
         triggerOnce: true,
     });
 
+    const { t: translate } = useTranslation();
+
     return (
         <Section ref={ref} visibility={inView ? 'visible' : 'hidden'} id="work" withSeparator height="70vh">
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <AnimatedContent animate={inView} marginTop="4.5rem" animationName="FadeIn" animationDuration={1000}>
-                        <SectionTitle>MY WORK</SectionTitle>
+                        <SectionTitle>{translate("work.title")}</SectionTitle>
                         <WorkDisplayContainer>
                             <SoonMessageStrip>
-                                Soon... Work in progress.
+                                {translate("work.soon")}
                             </SoonMessageStrip>
                             <WorkItem></WorkItem>
                             <WorkItem></WorkItem>
                             <WorkItem></WorkItem>
                         </WorkDisplayContainer>
                         <Text>
-                            In the meantime, I encourage you to check out my Github profile and resume if you want to know more about my skills and professional experience.
+                            {translate("work.text")}
                         </Text>
                         <ButtonContainer>
                             <ButtonBackground>
@@ -189,7 +192,7 @@ function Work() {
                             </ButtonBackground>
                             <ButtonBackground>
                                 <Button href="./spa_cv.pdf" rel="noopener noreferrer" target="_blank">
-                                    Resume
+                                    {translate("work.CV")}
                                 </Button>
                             </ButtonBackground>
                         </ButtonContainer>

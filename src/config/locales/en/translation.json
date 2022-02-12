@@ -19,11 +19,43 @@
       "5": " in general. My interest in all computer related stuff started a long time ago, at a tender age of 5 when I used to ",
       "6": " my father to repair computers.",
       "7": "Today, I spend most of my time developing (and sometimes designing) web applications and reliable web systems.",
-      "8": "are:",
+      "8": " are:",
       "highlight1": "Facundo",
-      "highlight2": "Alexandre",
+      "highlight2": " Alexandre",
       "highlight3": "web development and programming",
-      "highlight4": "&quot;help&quot;",
-      "highlight5": "A few technologies I frequently use"
+      "highlight4": "\"help\"",
+      "highlight5": "A few technologies I frequently use",
+      "personalInterests": "PERSONAL INTERESTS",
+      "personal1": "Travelling",
+      "personal2": "Barbeque",
+      "personal3": "Math & Statistics",
+      "personal4": "Hiking",
+      "techToLearn": "TECH THAT I WOULD LOVE TO LEARN",
+      "professionalInterests": "PROFESSIONAL INTERESTS",
+      "professional1": "Software Architecture",
+      "professional2": "Data Science",
+      "professional3": "UX/UI based development"
+    },
+    "work": {
+      "title": "MY WORK",
+      "soon": "Soon... work in progress.",
+      "text": "In the meantime, I encourage you to check out my Github profile and resume if you want to know more about my skills and professional experience.",
+      "CV": "Resume"
+    },
+    "form": {
+      "sectionTitle": "LET'S TALK",
+      "title": "Contact form",
+      "nameLabel": "Your name",
+      "namePlaceholder": "Example: John Doe",
+      "emailLabel": "Your email",
+      "emailPlaceholder": "john.doe@email.com",
+      "messageLabel": "Your message",
+      "messagePlaceholder": "Write your message here",
+      "subjectLabel": "Subject",
+      "subject1": "Freelance offer",
+      "subject2": "Consulting",
+      "subject3": "Job opportunity",
+      "subject4": "Other",
+      "send": "Send"
     }
 }

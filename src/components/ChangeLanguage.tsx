@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Icon from './Icon';
 import breakpoint from '../config/breakpoints';
+import { useTranslation } from 'react-i18next';
 
 type AvailableLanguage = "English" | "Español";
 
@@ -143,6 +144,7 @@ const LanguageName = styled.span`
 function ChangeLanguage({ languages = defaultLanguages, onClick, onSelect }: LanguageProps) {
     const [state, setState] = useState<SelectorState>(getInitialState(languages))
     const { selected, isOpen } = state;
+    const { i18n } = useTranslation()
 
     useEffect(() => {
         const languagePreset = localStorage.getItem("language");
@@ -158,9 +160,11 @@ function ChangeLanguage({ languages = defaultLanguages, onClick, onSelect }: Lan
         setState(prevState => ({ ...prevState, isOpen: !isOpen }));
     }
 
-    const selectLanguage = (languageName: AvailableLanguage) => {
+    const selectLanguage = async (languageName: AvailableLanguage) => {
         setState(prevState => ({ ...prevState, selected: languageName, isOpen: false }));
         localStorage.setItem("language", languageName);
+
+        await i18n.changeLanguage(languageName);
     }
 
     return (

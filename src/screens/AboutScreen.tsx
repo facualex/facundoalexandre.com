@@ -78,6 +78,7 @@ const TextContainer = styled.div`
 `
 
 const Text = styled.p<{ withMargin?: boolean }>`
+    width: 100%;
     font-size: 14px;
     color: ${({ theme }) => hexToRGB(theme.colors.white, { format: 'css', alpha: 0.3 })};    
     margin-top: ${({ withMargin = true }) => withMargin ? '1rem' : undefined};    
@@ -312,7 +313,9 @@ function MyInterests() {
             <Row>
                 <Column>
                     <ColumnContent>
-                        <InterestsTitle>PERSONAL INTERESTS</InterestsTitle>
+                        <InterestsTitle>
+                            {translate("about.personalInterests")}
+                        </InterestsTitle>
                         <Text>
                             <HighlightText
                                 color={hexToRGB(colors.primary, { format: 'css', alpha: 0.7 })}
@@ -321,7 +324,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Travelling
+                            {translate("about.personal1")}
                         </Text>
                         <Text>
                             <HighlightText
@@ -331,7 +334,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Barbeque
+                            {translate("about.personal2")}
                         </Text>
                         <Text>
                             <HighlightText
@@ -341,7 +344,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Math & Statistics
+                            {translate("about.personal3")}
                         </Text>
                         <Text>
                             <HighlightText
@@ -351,13 +354,15 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Hiking
+                            {translate("about.personal4")}
                         </Text>
                     </ColumnContent>
                 </Column>
                 <Column>
                     <ColumnContent>
-                        <InterestsTitle>TECH I WOULD LOVE TO LEARN</InterestsTitle>
+                        <InterestsTitle>
+                            {translate("about.techToLearn")}
+                        </InterestsTitle>
                         <Text>
                             <HighlightText
                                 color={hexToRGB(colors.primary, { format: 'css', alpha: 0.7 })}
@@ -392,7 +397,9 @@ function MyInterests() {
                 </Column>
                 <Column>
                     <ColumnContent>
-                        <InterestsTitle>PROFESSIONAL INTERESTS</InterestsTitle>
+                        <InterestsTitle>
+                            {translate("about.professionalInterests")}
+                        </InterestsTitle>
                         <Text>
                             <HighlightText
                                 color={hexToRGB(colors.primary, { format: 'css', alpha: 0.7 })}
@@ -401,7 +408,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Software Architecture
+                            {translate("about.professional1")}
                         </Text>
                         <Text>
                             <HighlightText
@@ -411,7 +418,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            Data Science
+                            {translate("about.professional2")}
                         </Text>
                         <Text>
                             <HighlightText
@@ -421,7 +428,7 @@ function MyInterests() {
                             >
                                 &gt;
                             </HighlightText>
-                            UX/UI focused development
+                            {translate("about.professional3")}
                         </Text>
                     </ColumnContent>
                 </Column>
@@ -443,21 +450,35 @@ function About() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <AnimatedContent animate={inView} marginTop="4.5rem" animationName="FadeInLeft">
                         <TextContainer>
-                            <SectionTitle>ABOUT ME</SectionTitle>
+                            <SectionTitle>{translate("about.title")}</SectionTitle>
                             <Text>
-                                Hello there! My name is <HighlightText>Facundo</HighlightText>, a very common name in Argentina and Uruguay.
-                                <HighlightText> Alexandre</HighlightText> is my last name, a very common first name in some countries of Latin America,
-                                so people often think that’s also part of my first name.
+                                {translate("about.1")}
+                                <HighlightText>
+                                    {translate("about.highlight1")}
+                                </HighlightText>
+                                {translate("about.2")}
+                                <HighlightText>
+                                    {translate("about.highlight2")}
+                                </HighlightText>
+                                {translate("about.3")}
                             </Text>
                             <Text>
-                                I love <HighlightText>web development and programming</HighlightText> in general. My interesest in all computer related
-                                stuff started a long time ago, at a tender age of 5 when I started <HighlightText>“helping”</HighlightText> my father to repair computers.
+                                {translate("about.4")}
+                                <HighlightText>
+                                    {translate("about.highlight3")}
+                                </HighlightText>
+                                {translate("about.5")}
+                                <HighlightText>
+                                    {translate("about.highlight4")}
+                                </HighlightText>
+                                {translate("about.6")}
+                                {translate("about.7")}
                             </Text>
                             <Text>
-                                Today, I spend my time developing (and sometimes designing) web applications and reliable web systems.
-                            </Text>
-                            <Text>
-                                A <HighlightText>few technologies that I frequently use</HighlightText> are:
+                                <HighlightText>
+                                    {translate("about.highlight5")}
+                                </HighlightText>
+                                {translate("about.8")}
                             </Text>
                             <TechList />
                         </TextContainer>

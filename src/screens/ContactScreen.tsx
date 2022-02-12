@@ -4,6 +4,7 @@ import Form from '../components/Form';
 import Section from '../layout/Section';
 import breakpoint from '../config/breakpoints'
 import hexToRGB from 'hex-rgb';
+import { useTranslation } from 'react-i18next';
 
 const SectionTitle = styled.h1`
     display: flex;
@@ -28,9 +29,11 @@ const SectionTitle = styled.h1`
 `
 
 function Contact() {
+    const { t: translate } = useTranslation();
+
     return (
         <Section id="contact">
-            <SectionTitle>LET'S TALK</SectionTitle>
+            <SectionTitle>{translate("form.sectionTitle")}</SectionTitle>
             <div style={{ display: 'flex', justifyContent: "center", width: "100%" }}>
                 <Form />
             </div>

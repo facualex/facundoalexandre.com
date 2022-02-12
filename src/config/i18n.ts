@@ -4,17 +4,17 @@ import spanish from './locales/spa/translation.json';
 import { initReactI18next } from 'react-i18next';
 
 export const resources = {
-  en: {
+  English: {
     translation: english,
   },
-  spa: {
+  Español: {
     translation: spanish,
   },
 } as const;
 
 i18n.use(initReactI18next).init({
-  lng: 'en',
-  fallbackLng: "en",
+  lng: 'English',
+  fallbackLng: "English",
   interpolation: {
     escapeValue: false, // not needed for react as it escapes by default
   },

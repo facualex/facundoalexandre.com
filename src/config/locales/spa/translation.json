@@ -1,5 +1,61 @@
 {
     "home": {
-      "hello": "Hola, mi nombre es"
+      "hello": "Hola, mi nombre es",
+      "subtitle": "Construyo experiencias para la web.",
+      "text": {
+        "1": "Soy un Ingeniero de Software especializado en el desarrollo de experiencias en la web y de sistemas confiables de alta calidad. Actualmente estoy trabajando en un ",
+        "2": "pero también estoy ",
+        "highlight1": "proyecto personal ",
+        "highlight2": "disponible para trabajar."
+      },
+      "cta": "Hablemos"
+    },
+    "about": {
+      "title": "SOBRE MI",
+      "1": "Hola! Mi nombre es ",
+      "2": " un nombre muy común en Argentina y Uruguay.",
+      "3": " es mi apellido, un nombre muy común en algunos paises de America Latina, por lo que muchos lo confunden con mi nombre.",
+      "4": " Me apasiona ",
+      "5": " en general. Mi interés por todo lo relacionado a la computación comenzó hace mucho tiempo, a una tierna edad de 5 años cuando solía ",
+      "6": " a mi padre a reparar computadoras.",
+      "7": "Hoy en día, uso la mayoría de mi tiempo en desarrollar (y a veces diseñar) aplicaciones web y sistemas web robustos.",
+      "8": " son:",
+      "highlight1": "Facundo",
+      "highlight2": " Alexandre",
+      "highlight3": "el desarrollo web y la programación",
+      "highlight4": "\"ayudar\"",
+      "highlight5": "Algunas tecnologías que uso habitualmente",
+      "personalInterests": "INTERESES PERSONALES",
+      "personal1": "Viajar",
+      "personal2": "Barbeque",
+      "personal3": "Matemática y Estadística",
+      "personal4": "Trekking",
+      "techToLearn": "TECNOLOGIAS QUE QUIERO APRENDER",
+      "professionalInterests": "INTERESES PROFESIONALES",
+      "professional1": "Arquitectura de Software",
+      "professional2": "Ciencia de datos",
+      "professional3": "Desarrollo enfocado en UX/UI"
+    },
+    "work": {
+      "title": "MI TRABAJO",
+      "soon": "Proximamente... trabajo en progreso.",
+      "text": "Por mientras, te invito a revisar my perfil de Github y mi CV si quieres saber más de mis habilidades y experiencia profesional.",
+      "CV": "CV"
+    },
+    "form": {
+      "sectionTitle": "HABLEMOS",
+      "title": "Formulario de contacto",
+      "nameLabel": "Tu nombre",
+      "namePlaceholder": "Ejemplo: John Doe",
+      "emailLabel": "Tu correo electrónico",
+      "emailPlaceholder": "john.doe@email.com",
+      "messageLabel": "Tu mensaje",
+      "messagePlaceholder": "Escribe tu mensaje aquí",
+      "subjectLabel": "Asunto",
+      "subject1": "Oferta freelance",
+      "subject2": "Consultoría",
+      "subject3": "Oportunidad de trabajo",
+      "subject4": "Otro",
+      "send": "Enviar"
     }
 }

@@ -2,6 +2,7 @@ import React, { InputHTMLAttributes, useState } from 'react'
 import hexToRGB from 'hex-rgb'
 import styled from 'styled-components'
 import breakpoint from '../config/breakpoints'
+import { useTranslation } from 'react-i18next'
 
 const FormContainer = styled.div`
     display: flex;
@@ -318,6 +319,7 @@ function Input({ name, label, onChange, placeholder = "Start writing here...", m
 
 function Form() {
     const [state, setState] = useState<State>(initialState)
+    const { t: translate } = useTranslation();
 
     const { name, email, message, subject, honey } = state;
 
@@ -338,26 +340,26 @@ function Form() {
 
     return (
         <FormContainer>
-            <FormTitle>Contact form</FormTitle>
+            <FormTitle>{translate("form.title")}</FormTitle>
             <InputGroup>
                 <div style={{ display: 'flex', flex: 1, flexDirection: 'column', marginRight: '1rem' }}>
-                    <Input name="name" label="Your name" onChange={setInput} placeholder="Example: John Doe" marginTop="1rem" marginBottom="2rem" />
-                    <Input name="email" label="Your email" onChange={setInput} placeholder="Example: johndoe@email.com" marginTop="1rem" />
+                    <Input name="name" label={translate("form.nameLabel")} onChange={setInput} placeholder={translate("form.namePlaceholder")} marginTop="1rem" marginBottom="2rem" />
+                    <Input name="email" label={translate("form.emailLabel")} onChange={setInput} placeholder={translate("form.emailPlaceholder")} marginTop="1rem" />
                 </div>
                 <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
-                    <Input textarea name="message" label="Your message" onChange={setInput} placeholder="Write your message here..." marginTop="1rem" />
+                    <Input textarea name="message" label={translate("form.messageLabel")} onChange={setInput} placeholder={translate("form.messagePlaceholder")} marginTop="1rem" />
                 </div>
             </InputGroup>
             <ButtonGroupContainer>
                 <Label><b>Subject</b></Label>
                 <ButtonGroup>
-                    <Button id="freelance" selected={subject === "freelance"} onClick={selectOption}>Freelance offer</Button>
-                    <Button id="consulting" selected={subject === "consulting"} onClick={selectOption}>Consulting</Button>
-                    <Button id="job" selected={subject === "job"} onClick={selectOption}>Job opportunity</Button>
-                    <Button id="other" selected={subject === "other"} onClick={selectOption}>Other</Button>
+                    <Button id="freelance" selected={subject === "freelance"} onClick={selectOption}>{translate("form.subject1")}</Button>
+                    <Button id="consulting" selected={subject === "consulting"} onClick={selectOption}>{translate("form.subject2")}</Button>
+                    <Button id="job" selected={subject === "job"} onClick={selectOption}>{translate("form.subject3")}</Button>
+                    <Button id="other" selected={subject === "other"} onClick={selectOption}>{translate("form.subject4")}</Button>
                 </ButtonGroup>
                 <SendButton canSubmit={canSubmit} disabled={!canSubmit}>
-                    Send
+                    {translate("form.send")}
                 </SendButton>
             </ButtonGroupContainer>
         </FormContainer>
