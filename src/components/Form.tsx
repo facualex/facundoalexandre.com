@@ -351,7 +351,7 @@ function Form() {
                 </div>
             </InputGroup>
             <ButtonGroupContainer>
-                <Label><b>Subject</b></Label>
+                <Label><b>{translate("form.subjectLabel")}</b></Label>
                 <ButtonGroup>
                     <Button id="freelance" selected={subject === "freelance"} onClick={selectOption}>{translate("form.subject1")}</Button>
                     <Button id="consulting" selected={subject === "consulting"} onClick={selectOption}>{translate("form.subject2")}</Button>

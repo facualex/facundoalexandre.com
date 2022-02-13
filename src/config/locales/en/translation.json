@@ -1,4 +1,10 @@
 {
+    "navigation": {
+      "home": "HOME",
+      "about": "ABOUT",
+      "work": "WORK",
+      "contact": "CONTACT"
+    },
     "home": {
       "hello": "Hello, my name is",
       "subtitle": "I build experiences for the web.",

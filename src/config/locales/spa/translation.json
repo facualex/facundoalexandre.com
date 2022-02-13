@@ -1,4 +1,10 @@
 {
+    "navigation": {
+      "home": "HOME",
+      "about": "SOBRE MI",
+      "work": "TRABAJO",
+      "contact": "CONTACTO"
+    },
     "home": {
       "hello": "Hola, mi nombre es",
       "subtitle": "Construyo experiencias para la web.",
@@ -18,7 +24,7 @@
       "4": " Me apasiona ",
       "5": " en general. Mi interés por todo lo relacionado a la computación comenzó hace mucho tiempo, a una tierna edad de 5 años cuando solía ",
       "6": " a mi padre a reparar computadoras.",
-      "7": "Hoy en día, uso la mayoría de mi tiempo en desarrollar (y a veces diseñar) aplicaciones web y sistemas web robustos.",
+      "7": " Hoy en día, uso la mayoría de mi tiempo en desarrollar (y a veces diseñar) aplicaciones web y sistemas web robustos.",
       "8": " son:",
       "highlight1": "Facundo",
       "highlight2": " Alexandre",

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { useTheme } from 'styled-components'
 import Icon from '../components/Icon'
 import hexToRGBA from 'hex-rgb'
 import breakpoint from '../config/breakpoints';
+import { useTranslation } from 'react-i18next';
 
 const IconsContainer = styled.div`
     display: flex;
@@ -48,6 +49,15 @@ const StyledIcon = styled(Icon)`
 
 function IconsBar() {
     const { colors } = useTheme()
+    const { i18n } = useTranslation()
+    const [currentLanguage, setCurrentLanguage] = useState<string | undefined>("English");
+
+
+    useEffect(() => {
+        setCurrentLanguage( i18n.language || "English");
+    }, [i18n.language]);
+
+    const selectedResume = currentLanguage === "Español" ? "spa_cv.pdf" : "eng_cv.pdf";
 
     return (
         <IconsContainer>
@@ -59,7 +69,7 @@ function IconsBar() {
             </a>
             <Separator />
 
-            <a href="./spa_cv.pdf" style={{ display: "flex", alignItems: "center", textDecoration: "none" }} rel="noopener noreferrer" target="_blank">
+            <a href={`./${selectedResume}`} style={{ display: "flex", alignItems: "center", textDecoration: "none" }} rel="noopener noreferrer" target="_blank">
                 <StyledIcon icon="resume" color={colors.icon} size="lg" marginRight="5px" marginLeft="17px" />
                 <span style={{ fontSize: "10px", color: colors.icon }}>CV</span>
             </a>

@@ -12,8 +12,10 @@ export const resources = {
   },
 } as const;
 
+const savedLanguage = localStorage.getItem("language");
+
 i18n.use(initReactI18next).init({
-  lng: 'English',
+  lng: savedLanguage || 'English',
   fallbackLng: "English",
   interpolation: {
     escapeValue: false, // not needed for react as it escapes by default
